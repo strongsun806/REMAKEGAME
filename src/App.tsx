@@ -47,10 +47,10 @@ export type AppMode = "create" | "build" | "play" | "switch";
 export type CreateStep = "name" | "genre" | "hero" | "vibe" | "ready";
 
 const HERO_PLACEHOLDERS: readonly string[] = [
-  "a fox in a tiny scarf",
-  "your boss, but a pigeon",
-  "a sandwich with dreams",
-  "grandma in a jetpack",
+  "a cute puppy with a brown beret (Pompompurin)",
+  "a golden puppy who loves custard pudding",
+  "a fluffy puppy napping in a teacup",
+  "a sweet puppy exploring pudding land",
 ];
 
 const STAGE_CAPTIONS: Record<BuildStageName, readonly string[]> = {
@@ -84,7 +84,7 @@ const LATE_BUILD_CAPTIONS: readonly string[] = [
 function fillHeroSlot(template: string, card?: GameDesignCard | null, rawHero?: string): string {
   const shortHero =
     card?.hero?.short ||
-    deriveShortHero(rawHero || "", "fox", 18);
+    deriveShortHero(rawHero || "", "purin", 18);
   return template.replace(/\{hero\}/g, shortHero);
 }
 
@@ -600,7 +600,7 @@ const PlayglowArcade: React.FC = () => {
         const cur = activeGameRef.current;
         if (cartErrorsRef.current >= 3 && cur && !cur.isHouse) {
           // 3x runtime error -> fallback to house game of that genre
-          loadHouseGameSource(cur.genre).then((houseSrc) => {
+          loadHouseGameSource(cur.genre).then((houseSrc: string) => {
             cartRef.current?.load(houseSrc, cur.card).catch(() => {});
           });
         }
@@ -1070,7 +1070,7 @@ const PlayglowArcade: React.FC = () => {
             });
           }
         },
-      }).then((skinRes) => {
+      }).then((skinRes: any) => {
         imagesMs = skinRes.imagesMs;
         return skinRes;
       });
@@ -1170,9 +1170,9 @@ const PlayglowArcade: React.FC = () => {
         onUpdate: (snap: BuildSnapshot) => {
           if (buildRunIdRef.current !== myRunId) return;
           // Map BuildSession stages to 04-app-spec.md stages & monotonic %
-          const playtestItem = snap.stages.find((s) => s.id === "playtest");
-          const cartridgeItem = snap.stages.find((s) => s.id === "cartridge");
-          const codingItem = snap.stages.find((s) => s.id === "coding");
+          const playtestItem = snap.stages.find((s: any) => s.id === "playtest");
+          const cartridgeItem = snap.stages.find((s: any) => s.id === "cartridge");
+          const codingItem = snap.stages.find((s: any) => s.id === "coding");
 
           let nextStage: BuildStageName = "designing";
           let targetPct = 8;

@@ -1,9 +1,9 @@
 export function create(engine, card) {
   const P = card?.engine_palette || { bg: 19, fg: 27, accent1: 11, accent2: 15, ui: 7 };
-  const heroName = String(card?.hero?.short || "MOTH").toUpperCase();
-  const heroPal = { o: 16, w: 7, b: P.fg, p: P.accent1, a: P.accent2, s: 12 };
-  const hero1 = engine.sprite("..o.a..a.o..\n.obbboobbbo.\nobwwbppbwwbo\nobpbbaabbpbo\nobbbowwobbbo\n.obpsaaaspbo\n.obbbaabbbbo\n..obbpbbpbo.\n...oo.oo.o..\n....o..o....", heroPal);
-  const hero2 = engine.sprite("....a..a....\n...oo..oo...\n..obboobbo..\n.obwwaawwbo.\nobpbbaabbpbo\nobbbowwobbbo\nobpsbaaaspbo\n.obbbaabbbbo\n..obbpbbpbo.\n...oo..oo...", heroPal);
+  const heroName = String(card?.hero?.short || "PURIN").toUpperCase();
+  const heroPal = { o: 16, b: 4, e: 4, y: 10, Y: 23, k: 0, p: 14, w: 7 };
+  const hero1 = engine.sprite("....obbo....\n...obbbbo...\n..oebbbbeo..\n.oeyyyyyyeo.\n.oeykyykyyeo\n.ooyyypyyyoo\n..oyyyyyyyyo\n.oyyyyyyyyyy\n..oyyo..oyyo\n...oo....oo.", heroPal);
+  const hero2 = engine.sprite("....obbo....\n...obbbbo...\n..oebbbbeo..\n.oeyyyyyyeo.\n.oeykyykyyeo\n.ooyyypyyyoo\n..oyyyyyyyyo\n.oyyyyyyyyyy\n...oyyo.oyyo\n...oo...oo..", heroPal);
 
   const mkGhost = (f) => [
     engine.sprite("..oooooo..\n.ohfffffo.\noffwffwffo\noffwffwffo\noffffffffo\noffsssfffo\nof.offo.fo\no..o..o..o", { o: 16, f, h: 7, s: P.bg, w: 7 }),

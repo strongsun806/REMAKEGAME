@@ -176,30 +176,28 @@ export function tiny2(
 // ---------------- Sprites from mocks/playglow/index.html lines 218–309 ----------------
 const PIP_ROWS = [
   "......oooo......",
-  "....oorrrroo....",
-  "...orryyyyrro...",
-  "..oryYYyyyyyro..",
-  "..orYYyyyyyyro..",
-  ".oryYyyyyyyyyro.",
-  ".oryywkyyywkyro.",
-  ".oryykkyyykkyro.",
-  ".oryykkyyykkyro.",
-  ".orpyyyyyyyypro.",
-  ".oryyyykkyyyyro.",
-  "..oryyyyyyyyro..",
-  "..orryyyyyyrro..",
-  "...oorrrrrroo...",
-  ".....oooooo.....",
-  "....oRo..oRo....",
-  "....ooo..ooo....",
+  ".....obbbbo.....",
+  "...oobbbbbboo...",
+  "..oeyyyyyyyyeo..",
+  "..oeyykyykyyeo..",
+  "..ooyyypyyyoo...",
+  "..oyyyyyyyyyyo..",
+  ".oyyyyyyyyyyyyo.",
+  ".oyyyyyyyyyyyyo.",
+  "..oyyyyyyyyyyo..",
+  "..oyyyyppykyyo..",
+  "...oyyyyyyyyo...",
+  "...ooyyyyyyoo...",
+  "....oyyo.oyyo...",
+  "....ooo...ooo...",
 ];
 const PIP_MAP = {
-  o: C.dplum,
-  r: C.orange,
-  R: C.dorange,
+  o: C.dbrown,
+  b: C.brown,
+  e: C.brown,
   y: C.yellow,
   Y: C.lyellow,
-  k: C.dbrown,
+  k: C.black,
   w: C.cream,
   p: C.pink,
 };
@@ -210,26 +208,31 @@ const pipBlink = spriteFromRows(
 );
 
 const FOX_TOP = [
-  "..........o..o..",
-  ".........oro.oro",
-  ".........orrrrro",
-  "........orrkrrwo",
-  "........orrrrwwk",
-  ".oo.....owwwwwo.",
-  "orro...ossssso..",
-  "orrro.orrsrrrro.",
-  ".owrrrorrrrrrro.",
-  "..owrrrrrrrrrro.",
-  "...oorrrrrrrroo.",
+  "......oooo......",
+  ".....obbbbo.....",
+  "...oobbbbbboo...",
+  "..oeyyyyyyyyeo..",
+  "..oeyykyykyyeo..",
+  "..ooyyypyyyoo...",
+  "...oyyyyyyyyo.o.",
+  "..oyyyyyyyyyyoo.",
+  "..oyyyyyyyyyyo..",
+  "..oyyyyyyyyyyo..",
+  "...oyyyyoyyyo...",
 ];
-const FOX_A = [...FOX_TOP, "....orro..orro..", "....ooo...ooo..."];
-const FOX_B = [...FOX_TOP, "...orro....orro.", "...ooo.....ooo.."];
+const FOX_A = [...FOX_TOP, "....oyyo.oyyo...", "....ooo...ooo..."];
+const FOX_B = [...FOX_TOP, "...oyyo...oyyo..", "...ooo.....ooo.."];
 const FOX_MAP = {
   o: C.dbrown,
-  r: C.dorange,
+  b: C.brown,
+  e: C.brown,
+  y: C.yellow,
+  Y: C.lyellow,
   w: C.cream,
   k: C.black,
-  s: C.blue,
+  p: C.pink,
+  s: C.yellow,
+  r: C.yellow,
 };
 export const foxA = spriteFromRows(FOX_A, FOX_MAP);
 export const foxB = spriteFromRows(FOX_B, FOX_MAP);
@@ -791,8 +794,8 @@ export const MOCK_GAMES: Record<MockGameKey, MockGameDef> = {
   fox: {
     key: "fox",
     genre: "runner",
-    title: "FOXFIRE RUN",
-    by: "JAMES",
+    title: "PURIN RUN",
+    by: "PURIN",
     plays: "NEW",
     hearts: 12,
     draw: drawRunner,
@@ -800,7 +803,7 @@ export const MOCK_GAMES: Record<MockGameKey, MockGameDef> = {
     body: C.dplum,
     btn: C.dorange,
     mq: {
-      title: "FOXFIRE RUN",
+      title: "PURIN RUN",
       bg: [C.dnavy, C.plum, C.crimson, C.dorange],
       grad: [C.yellow, C.orange],
       outline: C.dbrown,
@@ -818,9 +821,9 @@ export const MOCK_GAMES: Record<MockGameKey, MockGameDef> = {
       ],
       hero: foxA,
       heroScale: 4,
-      title: ["FOXFIRE", "RUN"],
+      title: ["PURIN", "RUN"],
       stripes: [C.orange, C.dorange, C.crimson],
-      sub: "BY JAMES",
+      sub: "BY PURIN",
     },
   },
   comet: {

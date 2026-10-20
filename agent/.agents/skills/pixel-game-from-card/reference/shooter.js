@@ -1,11 +1,11 @@
 export function create(engine, card) {
   const P = card?.engine_palette || { bg: 17, fg: 28, accent1: 12, accent2: 14, ui: 7 };
-  const heroName = String(card?.hero?.short || "SHIP").slice(0, 10).toUpperCase();
+  const heroName = String(card?.hero?.short || "PURIN").slice(0, 10).toUpperCase();
 
   // 11x10 6-color dark-outlined starfighter (2-frame thruster animation)
-  const shipPal = { o: 16, c: P.accent1, b: P.fg, w: 7, f: 9, y: P.accent2 };
-  const ship1 = engine.sprite([".....o.....","....owo....","...ocwco...","..ocwwwco..",".obcwwwcbo.","obbcwwwcbbo","obwwwwwwwbo","obbyyyyybbo",".oo.ofo.oo.","....oyo...."].join("\n"), shipPal);
-  const ship2 = engine.sprite([".....o.....","....owo....","...ocwco...","..ocwwwco..",".obcwwwcbo.","obbcwwwcbbo","obwwwwwwwbo","obbyyyyybbo",".oo.oyo.oo.","...of.fo..."].join("\n"), shipPal);
+  const shipPal = { o: 16, b: 4, e: 4, y: 10, Y: 23, k: 0, p: 14, w: 7, f: 9 };
+  const ship1 = engine.sprite(["....obbo...","...obbbbo..","..oebbbbeo.",".oeyyyyyyeo",".oeykyykyye",".ooyyypyyyo","wooyyyyyyoo","woyyyyyyyyw",".oo.ofo.oo.","....oyo...."].join("\n"), shipPal);
+  const ship2 = engine.sprite(["....obbo...","...obbbbo..","..oebbbbeo.",".oeyyyyyyeo",".oeykyykyye",".ooyyypyyyo","wooyyyyyyoo","woyyyyyyyyw",".oo.oyo.oo.","...of.fo..."].join("\n"), shipPal);
 
   // 2-frame pulsing space jelly, kamikaze diver, 15x11 Armored Dreadnought Mini-Boss
   const jellyPal = { o: 16, f: P.fg, c: P.accent2, w: 7, k: 16 };

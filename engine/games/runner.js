@@ -1,26 +1,53 @@
 export function create(engine, card) {
   const P = card?.engine_palette || { bg: 2, fg: 25, accent1: 9, accent2: 10, ui: 7 };
   const vibe = card?.vibe || "sunset";
-  const heroName = String(card?.hero?.short || "FOX").slice(0, 10).toUpperCase();
+  const heroName = String(card?.hero?.short || "PURIN").slice(0, 10).toUpperCase();
 
-  // 16x13 6-color dark-outlined scarf-fox hero (2-frame run + airborne jump pose)
-  const heroPal = { o: 16, r: P.accent1, d: P.fg, w: 7, k: 16, s: 12 };
+  // 16x13 Pompompurin puppy hero (cream body, chocolate beret, floppy ears, wagging tail)
+  const heroPal = { o: 16, b: 4, e: 4, y: 10, Y: 23, k: 0, p: 14, w: 7 };
   const heroRun1 = engine.sprite([
-    "..........o..o..", ".........oro.oro", ".........orrrrro", "........ordkrrwo",
-    "........orrrrwwk", ".oo.....owwwwwo.", "orro...ossssso..", "ordro.orrsrrrdo.",
-    ".owrrrorrrrrrdo.", "..owrrrrrrrrddo.", "...ooddddddddoo.", "....orro..orro..",
+    "......oooo......",
+    ".....obbbbo.....",
+    "...oobbbbbboo...",
+    "..oeyyyyyyyyeo..",
+    "..oeyykyykyyeo..",
+    "..ooyyypyyyoo...",
+    "...oyyyyyyyyo.o.",
+    "..oyyyyyyyyyyoo.",
+    "..oyyyyyyyyyyo..",
+    "..oyyyyyyyyyyo..",
+    "...oyyyyoyyyo...",
+    "....oyyo.oyyo...",
     "....ooo...ooo...",
   ].join("\n"), heroPal);
   const heroRun2 = engine.sprite([
-    "..........o..o..", ".........oro.oro", ".........orrrrro", "........ordkrrwo",
-    "........orrrrwwk", ".oo.....owwwwwo.", ".orro..osssssso.", ".ordroorrsrrrdo.",
-    "..owrrorrrrrrdo.", "...owrrrrrrrddo.", "....oodddddddoo.", "...orro....orro.",
+    "......oooo......",
+    ".....obbbbo.....",
+    "...oobbbbbboo...",
+    "..oeyyyyyyyyeo..",
+    "..oeyykyykyyeo..",
+    "..ooyyypyyyoo...",
+    "...oyyyyyyyyoo..",
+    "..oyyyyyyyyyyo.o",
+    "..oyyyyyyyyyyo..",
+    "..oyyyyyyyyyyo..",
+    "...oyyyyoyyyo...",
+    "...oyyo...oyyo..",
     "...ooo.....ooo..",
   ].join("\n"), heroPal);
   const heroJump = engine.sprite([
-    ".........o..o...", "........oro.oro.", "........orrrrro.", ".......ordkrrwo.",
-    ".ooo...orrrrwwk.", "osssso.owwwwwo..", ".ooossorrrrrrdo.", ".orrddrrrrrrrdo.",
-    "..owrrrrrrrrddo.", "...ooddddddddoo.", "..orro.....orro.", "..ooo......ooo..",
+    "......oooo......",
+    "....oobbbboo....",
+    "...obbbbbbbbo...",
+    ".ooeeyyyyyyeoo..",
+    "..oeyykyykyyeo..",
+    "..ooyyypyyyoo...",
+    "...oyyyyyyyyo.o.",
+    "..oyyyyyyyyyyoo.",
+    "..oyyyyyyyyyyo..",
+    "..ooyyyyyyyyoo..",
+    ".oyyo.oooo.oyyo.",
+    ".ooo........ooo.",
     "................",
   ].join("\n"), heroPal);
 

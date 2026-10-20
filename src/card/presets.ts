@@ -29,11 +29,11 @@ export interface GenrePreset {
 export const GENRE_PRESETS: Record<GenreName, GenrePreset> = {
   runner: {
     genre: "runner",
-    defaultTitle: "FOXFIRE RUN",
+    defaultTitle: "PURIN RUN",
     defaultTagline: "outrun the dusk, grab every star",
     defaultHero: {
-      description: "a small orange fox in a tiny blue scarf with white-tipped tail",
-      short: "fox",
+      description: "a small orange purin in a tiny blue scarf with white-tipped tail",
+      short: "purin",
     },
     defaultEnemy: {
       description: "rolling boulders",

@@ -581,9 +581,8 @@ export class ArcadeStage {
 
     // Scene & Dusk Fog (exact from mocks/playglow/index.html lines 623–626)
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(C.dplum).convertSRGBToLinear();
-    this.scene.fog = new THREE.Fog(
-      new THREE.Color(C.dplum).convertSRGBToLinear(),
+    this.scene.background = new THREE.Color("#22130C").convertSRGBToLinear();
+    this.scene.fog = new THREE.Fog(new THREE.Color("#22130C").convertSRGBToLinear(),
       5,
       12
     );
@@ -1051,12 +1050,12 @@ export class ArcadeStage {
     this.hemiLight = new THREE.HemisphereLight(lin(C.lpeach), lin(C.dplum), 0.7);
     this.scene.add(this.hemiLight);
 
-    this.rimLight = new THREE.DirectionalLight(lin(C.dorange), 2.6);
+    this.rimLight = new THREE.DirectionalLight(lin("#FFA300"), 2.6);
     this.rimLight.position.set(2.2, 2.6, -2.2);
     this.rimLight.target.position.set(0, 0.8, 0.2);
     this.scene.add(this.rimLight, this.rimLight.target);
 
-    this.rim2Light = new THREE.DirectionalLight(lin(C.pink), 1.2);
+    this.rim2Light = new THREE.DirectionalLight(lin("#FFE169"), 1.4);
     this.rim2Light.position.set(-2.4, 2.2, -1.8);
     this.rim2Light.target.position.set(0, 0.8, 0.2);
     this.scene.add(this.rim2Light, this.rim2Light.target);
@@ -1066,7 +1065,7 @@ export class ArcadeStage {
     this.keySpotLight.target.position.set(0, 0.8, 0);
     this.scene.add(this.keySpotLight, this.keySpotLight.target);
 
-    this.sunLight = new THREE.DirectionalLight(lin(C.orange), 2.6);
+    this.sunLight = new THREE.DirectionalLight(lin("#FFD836"), 2.8);
     this.sunLight.position.set(wx - 0.9, 4.6, wz - 2.4);
     this.sunLight.target.position.set(wx + 0.8, 0, wz + 2.6);
     this.sunLight.castShadow = true;
@@ -1082,7 +1081,7 @@ export class ArcadeStage {
     this.sunLight.shadow.bias = -0.002;
     this.scene.add(this.sunLight, this.sunLight.target);
 
-    this.fillLight = new THREE.DirectionalLight(lin(C.pink), 0.35);
+    this.fillLight = new THREE.DirectionalLight(lin("#FFD836"), 0.45);
     this.fillLight.position.set(3, 2.5, 3);
     this.scene.add(this.fillLight);
 

@@ -1,9 +1,9 @@
 export function create(engine, card) {
   const P = card?.engine_palette || { bg: 19, fg: 27, accent1: 11, accent2: 15, ui: 7 };
-  const heroName = String(card?.hero?.short || "SLIME").toUpperCase();
-  const heroPal = { o: 16, k: 16, w: 7, g: P.accent1, h: P.accent2, m: P.fg };
-  const slimeIdle = engine.sprite("....ooooo....\n..oohhhhhoo..\n.ohwwgggggho.\nohwgggggggggo\nogggwokggwkgo\nogggookggokgo\nogghgggggggho\nogggggmmggggo\nomgggggggggmo\n.ommmmmmmmmo.\n..ooooooooo..", heroPal);
-  const slimeAir = engine.sprite("...ooooooo...\n..ohwwggggho.\n.ohwgggggggo.\n.oggwokggwkgo\n.oggookggokgo\n.ogghggggghgo\n.oggggmmggggo\n..omggggggmo.\n..ommmmmmmmo.\n...oo.oo.oo..\n...o..oo..o..", heroPal);
+  const heroName = String(card?.hero?.short || "PURIN").toUpperCase();
+  const heroPal = { o: 16, b: 4, e: 4, y: 10, Y: 23, k: 0, p: 14, w: 7 };
+  const slimeIdle = engine.sprite("....obbo.....\n...obbbbo....\n..oebbbbeo...\n.oeyyyyyyeo..\n.oeykyykyyeo.\n.ooyyypyyyoo.\n.oyyyyyyyyyyo\n.oyyyyyyyyyyo\n.oyyyyyyyyyyo\n..oyyo..oyyo.\n..oooo..oooo.", heroPal);
+  const slimeAir = engine.sprite("....obbo.....\n..oobbbboo...\n.obbbbbbbbo..\n.oeyyyyyyeo..\n.oeykyykyyeo.\n.ooyyypyyyoo.\n..oyyyyyyyyo.\n.ooyyyyyyyyoo\n.oyyo.oo.oyyo\n..oo......oo.\n.............", heroPal);
   const bPal = { o: 16, k: 16, f: P.fg, w: 7, r: P.accent2, a: P.accent1 };
   const beetle1 = engine.sprite("........ao..\n..ooooooaoo.\n.offwffffwfo\nofffrffffoko\nofffrffffwfo\nofffffffffoo\n.orrrrrrrro.\n.oo..oo..oo.", bPal);
   const beetle2 = engine.sprite(".........ao.\n..ooooooaoo.\n.offwffffwfo\nofffrffffoko\nofffrffffwfo\nofffffffffoo\n.orrrrrrrro.\n..oo..oo..o.", bPal);

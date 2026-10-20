@@ -1,39 +1,39 @@
 export function create(engine, card) {
   const P = card?.engine_palette || { bg: 2, fg: 24, accent1: 9, accent2: 10, ui: 7 };
   const vibe = card?.vibe || "sunset";
-  const heroName = String(card?.hero?.short || "HERO").slice(0, 10).toUpperCase();
+  const heroName = String(card?.hero?.short || "PURIN").slice(0, 10).toUpperCase();
 
-  // 14x13 6-color dark-outlined sneaker-coin Pip hero (2-frame run stride)
-  const heroPal = { o: 16, r: P.accent1, y: P.accent2, w: 7, k: 16, s: 8 };
+  // 14x13 Pompompurin puppy hero (yellow body, brown beret, floppy ears)
+  const heroPal = { o: 16, b: 4, e: 4, y: 10, Y: 23, k: 0, p: 14, w: 7 };
   const heroRun1 = engine.sprite(`
-    ....oooooo....
-    ..oorrrrrroo..
-    .orryyyyyyrro.
-    orywkyyyywkyro
-    orykkyyyykkyro
-    orwyyyyyyyywro
-    oryyyykkyyyyro
-    .oryyyyyyyyro.
-    ..oorrrrrroo..
-    ...oooooooo...
-    ..osss..ooo...
-    ..oooo..osss..
-    ........oooo..
+    ....obbo......
+    ...obbbbo.....
+    ..oebbbbeo....
+    .oeyyyyyyeo...
+    .oeykyykyyeo..
+    .ooyyypyyyoo..
+    ..oyyyyyyyyo..
+    .oyyyyyyyyyyo.
+    .oyyyyyyyyyyo.
+    ..oyyyyyyyyo..
+    ..oyyo..oyyo..
+    ..oooo..oooo..
+    ..............
   `, heroPal);
   const heroRun2 = engine.sprite(`
-    ....oooooo....
-    ..oorrrrrroo..
-    .orryyyyyyrro.
-    orywkyyyywkyro
-    orykkyyyykkyro
-    orwyyyyyyyywro
-    oryyyyyyyyyyro
-    .oryyykkyyyro.
-    ..oorrrrrroo..
-    ...oooooooo...
-    ...ooo..ssso..
-    ..ssso..oooo..
-    ..oooo........
+    ....obbo......
+    ...obbbbo.....
+    ..oebbbbeo....
+    .oeyyyyyyeo...
+    .oeykyykyyeo..
+    .ooyyypyyyoo..
+    ..oyyyyyyyyo..
+    .oyyyyyyyyyyo.
+    .oyyyyyyyyyyo.
+    ..oyyyyyyyyo..
+    ...oyyo.oyyo..
+    ...oooo.oooo..
+    ..............
   `, heroPal);
 
   // 2-frame flaming meteor hazard, glowing plasma seeker, 2-frame star & shield
